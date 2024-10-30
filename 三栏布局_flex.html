@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      /*使布局占满整个视口高度*/
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .column {
+      height: 100px;
+      /* 1 1 0表示可增长可压缩，初始大小为0 */
+    }
+
+    .item01 {
+      width: 250px;
+      background-color: blue;
+    }
+
+    .item02 {
+      flex: 1;
+      background-color: pink;
+      margin: 0 10px;
+    }
+
+    .item03 {
+      width: 250px;
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="column item01">左栏</div>
+    <div class="column item02">中拦</div>
+    <div class="column item03">右栏</div>
+  </div>
+</body>
+
+</html>

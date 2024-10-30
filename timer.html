@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #282c34;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .clock {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background-color: #444;
+      border: 10px solid white;
+      border-radius: 50%;
+    }
+
+    .hand {
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+      background-color: white;
+      transform-origin: bottom;
+      transform: translateX(-50%);
+    }
+
+    .hour {
+      width: 6px;
+      height: 50px;
+      background-color: #f39c12;
+      border-radius: 6px;
+      /* 数字越大层级越高 */
+      z-index: 3;
+    }
+
+    .minute {
+      width: 4px;
+      height: 70px;
+      background-color: #3498db;
+      border-radius: 4px;
+      z-index: 2;
+    }
+
+    .second {
+      width: 2px;
+      height: 90px;
+      background-color: #e74c3c;
+      border-radius: 2px;
+      z-index: 1;
+    }
+
+    .center {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: white;
+      top: 50%;
+      left: 50%;
+      z-index: 4;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="clock">
+    <div class="hand hour" id="hour-hand"></div>
+    <div class="hand minute" id="minute-hand"></div>
+    <div class="hand second" id="second-hand"></div>
+    <div class="center"></div>
+  </div>
+  <script>
+    function updateColck() {
+      const now = new Date()
+      const hours = now.getHours()
+      const minute = now.getMinutes()
+      const second = now.getSeconds()
+      // console.log(hours, minute, second)
+      // 每12小时一圈,每小时是30度,1分钟0.5度
+      const hourDeg = (hours % 12) * 30 + minute * 0.5
+      // 每分钟也是6度，1s是0.1度
+      const minuteDeg = 6 * minute + second * 0.1
+      // 每秒6度
+      const secondDeg = 6 * second
+      // 更新指针
+      document.querySelector('#hour-hand').style.transform = `translateX(-50%) rotate(${hourDeg}deg)`
+      document.querySelector('#minute-hand').style.transform = `translateX(-50%) rotate(${minuteDeg}deg)`
+      document.querySelector('#second-hand').style.transform = ` translateX(-50%) rotate(${secondDeg}deg)`
+
+    }
+
+    // 每一秒更新一次时钟
+    setInterval(updateColck, 1000)
+    // 页面加载时立即调用一次
+    updateColck()
+  </script>
+</body>
+
+</html>

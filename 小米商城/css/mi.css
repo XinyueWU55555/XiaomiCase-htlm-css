@@ -1,0 +1,406 @@
+/* 版心 */
+.container {
+  width: 1226px;
+  margin: 0 auto;
+}
+
+/* header start */
+.header {
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 
+面试常见的css居中问题：
+1.内容居中问题：一个大盒子中有一个小盒子，如何让小盒子在大盒子中垂直居中
+1.1弹性盒子模型
+1.2定位
+1.3表格（不推荐了）
+*/
+.header img {
+  height: 120px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* header end */
+
+/* nav start */
+.nav {
+  height: 40px;
+  width: 100%;
+  background-color: #333;
+  line-height: 40px;
+  font-size: 12px;
+}
+
+/* color是可继承的，但是有初始化样式，所以我们必须选中a来设置color */
+.nav a {
+  color: #b0b0b0;
+}
+
+.nav li {
+  float: left;
+  position: relative;
+  text-align: center;
+}
+
+.left-nav {
+  float: left;
+}
+
+.nav .split {
+  /* em相对于字体大小，默认16px字体大小，0.5em就为8px */
+  margin: 0 .5em;
+  color: #424242;
+}
+
+.right-nav {
+  float: right;
+}
+
+.download {
+  position: absolute;
+  width: 124px;
+  height: 0;
+  overflow: hidden;
+  box-shadow: 0 1px 5px #aaa;
+  left: 50%;
+  transform: translateX(-50%);
+  /* 设置哪个属性需要过渡 */
+  transition-property: height;
+  /* 设置过渡的时间 */
+  transition-duration: 1s;
+
+}
+
+.download img {
+  width: 90px;
+  height: 90px;
+}
+
+.nav .left-nav li:hover>.download {
+  height: 130px;
+}
+
+.nav .left-nav li:hover>.tri {
+  display: block;
+}
+
+.tri {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #fff;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  display: none;
+}
+
+.right-nav .cart {
+  height: 40px;
+  width: 120px;
+  background-color: #424242;
+  margin-left: 25px;
+}
+
+.right-nav .cart:hover {
+  background-color: #fff;
+}
+
+.right-nav .cart:hover a {
+  color: #ff6700;
+}
+
+.right-nav .cart .cart-list {
+  height: 0px;
+  width: 316px;
+  box-shadow: 0 2px 10px #aaa;
+  position: absolute;
+  right: 0;
+  transition: height 0.3s;
+  /* 必须加上，因为高度为0，但是里面有内容会溢出 */
+  overflow: hidden;
+  line-height: 100px;
+  z-index: 999999;
+}
+
+.right-nav .cart:hover>.cart-list {
+  height: 100px;
+}
+
+/* nav end */
+
+/* white nav start */
+.main-con {
+  background-color: #fff;
+  z-index: 10;
+  padding-bottom: 170px;
+}
+
+.white-nav {
+  height: 100px;
+  line-height: 100px;
+  position: relative;
+}
+
+.white-nav .logo {
+  float: left;
+}
+
+.white-nav .logo img {
+  width: 56px;
+  height: 56px;
+}
+
+.header-nav {
+  float: left;
+  width: 850px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.header-nav ul {
+  float: right;
+}
+
+.header-nav ul li {
+  float: left;
+  padding: 0 10px;
+}
+
+.header-nav>ul>li>a:hover~.item-child {
+  height: 229px;
+}
+
+.header-nav>ul>li>a:hover .header-search {
+  float: right;
+  width: 296px;
+  z-index: 1;
+}
+
+.header-search input {
+  width: 242px;
+  height: 48px;
+  border: 1px solid #e0e0e0;
+  padding: 0 10px;
+  float: left;
+  margin-top: 25px;
+  border-right: 0;
+  outline: none;
+}
+
+.header-search button {
+  height: 48px;
+  width: 50px;
+  border: 1px solid #e0e0e0;
+  float: left;
+  margin-top: 25px;
+  transition: all 0.5s;
+}
+
+.header-search button:hover {
+  background-color: #ff6700;
+  color: #fff;
+}
+
+.item-child {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  /* height: 229px; */
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 0;
+  top: 100px;
+  transition: all 0.5s;
+}
+
+.item-child ul {
+  float: left;
+}
+
+.item-child li {
+  line-height: normal;
+
+}
+
+.phone-img img {
+  width: 160px;
+  height: 110px;
+  border-right: 1px solid #b0b0b0;
+  margin: 35px 0;
+}
+
+.white-nav .item-child .produce-name {
+  font-size: 12px;
+}
+
+.white-nav .item-child .produce-price {
+  color: #ff6700;
+  font-size: 12px;
+}
+
+/* white nav end */
+
+
+/* banner start */
+.banner {
+  width: 100%;
+  height: 460px;
+}
+
+.banner .conatiner {
+  position: relative;
+}
+
+.slide {
+  height: 420px;
+  width: 234px;
+  position: absolute;
+  padding: 20px 0;
+  background-color: rgba(105, 101, 101, 0.6);
+}
+
+.slide>ul>li {
+  height: 42px;
+  line-height: 42px;
+  text-align: left;
+  padding-left: 30px;
+  padding-right: 20px;
+  font-size: 14px;
+}
+
+.slide>ul>li:hover {
+  background-color: #ff6700;
+}
+
+.slide>ul>li:hover .slide-list {
+  display: block;
+}
+
+.slide li a {
+  color: #fff;
+}
+
+.slide>ul>li>a>span {
+  float: right;
+}
+
+.banner-img {
+  height: 460px;
+  width: 100%;
+}
+
+
+.slide-list {
+  width: 530px;
+  height: 458px;
+  background-color: #fff;
+  position: absolute;
+  left: 234px;
+  top: 0;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  border-left: 0;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.18);
+  display: none;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.banner .slide .slide-list li {
+  width: 263px;
+  padding-left: 20px;
+  height: 76px;
+  box-sizing: border-box;
+  line-height: 76px;
+  float: left;
+}
+
+.banner .slide .slide-list li:hover span {
+  color: #ff6700;
+}
+
+.banner .slide .slide-list li a {
+  color: rgba(0, 0, 0);
+}
+
+.banner .slide .slide-list img {
+  margin-right: 10px;
+  width: 50px;
+}
+
+.banner .slide .slide-list span {
+  font-size: 17px;
+}
+
+/* banner end */
+
+/* tool bar start */
+.tool-bar {
+  position: fixed;
+  right: 0;
+  bottom: 70px;
+}
+
+.tool-bar img {
+  width: 25px;
+  height: 25px;
+
+}
+
+/* tool bar start end */
+
+/* adver start */
+.adver {
+  margin-top: 14px;
+  height: 170px;
+}
+
+.left-ad {
+  width: 228px;
+  height: 164px;
+  padding: 3px 3px;
+  background-color: #5f5750;
+  text-align: center;
+  font-size: 12px;
+}
+
+.adver .left-ad li {
+  width: 70px;
+  height: 82px;
+  float: left;
+  padding: 0 3px;
+}
+
+.adver .left-ad li a {
+  padding-top: 18px;
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.2s;
+}
+
+.adver .left-ad li a:hover {
+  color: rgba(255, 255, 255);
+}
+
+.adver .left-ad li a img {
+  width: 24px;
+  height: 24px;
+  display: block;
+  margin: 0 auto 4px;
+}
+
+/* adver end */
+.cg {
+  width: 100%;
+  height: 1000px;
+}

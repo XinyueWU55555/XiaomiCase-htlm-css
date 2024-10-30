@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+    }
+
+    .container::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .item {
+      width: 450px;
+      height: 200px;
+      float: left;
+      margin-right: 40px;
+    }
+
+    /* :nth-child(3)：选择作为其父元素的第三个子元素。请注意，这里是基于所有子元素的顺序，而不仅仅是类为 item 的元素。 */
+    .item:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    /* 基于最后一个子元素：:last-child 是基于元素在其父元素中的位置。如果最后一个子元素不是 .item，则选择器不会生效。 */
+    /* .item:last-child {
+      margin-right: 0;
+    } */
+
+    .item01 {
+      background-color: blue;
+    }
+
+    .item02 {
+      background-color: pink;
+    }
+
+    .item03 {
+      background-color: orange;
+    }
+
+    .item04 {
+      width: 450px;
+      height: 200px;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item01 item"></div>
+    <div class="item02 item"></div>
+    <div class="item03 item"></div>
+  </div>
+  <div class="item04"></div>
+</body>
+
+</html>
