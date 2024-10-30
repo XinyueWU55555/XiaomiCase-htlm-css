@@ -4,6 +4,10 @@
   margin: 0 auto;
 }
 
+body {
+  background-color: #f4f4f4;
+}
+
 /* header start */
 .header {
   width: 100%;
@@ -74,6 +78,8 @@
   transition-property: height;
   /* 设置过渡的时间 */
   transition-duration: 1s;
+  z-index: 999;
+  background-color: #fff;
 
 }
 
@@ -119,6 +125,7 @@
 }
 
 .right-nav .cart .cart-list {
+  background-color: #fff;
   height: 0px;
   width: 316px;
   box-shadow: 0 2px 10px #aaa;
@@ -141,13 +148,14 @@
 .main-con {
   background-color: #fff;
   z-index: 10;
-  padding-bottom: 170px;
+  padding-bottom: 17px;
 }
 
 .white-nav {
   height: 100px;
   line-height: 100px;
   position: relative;
+  background-color: #fff;
 }
 
 .white-nav .logo {
@@ -372,6 +380,7 @@
   background-color: #5f5750;
   text-align: center;
   font-size: 12px;
+  float: left;
 }
 
 .adver .left-ad li {
@@ -399,7 +408,106 @@
   margin: 0 auto 4px;
 }
 
+.right-ad {
+  float: left;
+  margin-left: 14px;
+}
+
+.right-ad img {
+  width: 316px;
+  height: 170px;
+}
+
+
 /* adver end */
+
+/*#region content start */
+.head-box {
+  height: 58px;
+  width: 100%;
+  line-height: 58px;
+  text-align: left;
+}
+
+.head-box h2 {
+  float: left;
+}
+
+.more {
+  float: right;
+}
+
+.more a {
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.more a:hover {
+  color: #ff6700;
+}
+
+.phone-box {
+  width: 100%;
+  height: 614px;
+}
+
+.phone-box-left {
+  width: 234px;
+  height: 628px;
+  float: left;
+}
+
+.phone-box-right {
+  width: 992px;
+  height: 628px;
+  float: right;
+}
+
+.phone-box-right li {
+  float: left;
+  margin-left: 14px;
+  margin-bottom: 14px;
+}
+
+.phone-box-right li>a {
+  padding-top: 20px;
+  height: 300px;
+  width: 234px;
+  background-color: #fff;
+  display: block;
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+}
+
+.phone-box-right li>a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.phone-box-right li>a img {
+  width: 160px;
+  height: 160px;
+}
+
+.phone-box-right li>a .title {
+  margin: 18px 10px 2px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.phone-box-right li>a .desc {
+  color: #b0b0b0;
+  font-size: 12px;
+  margin: 0 10px 10px;
+  height: 18px;
+}
+
+.phone-box-right li>a .price {
+  margin: 0 10px 14px;
+  color: #ff6700;
+}
+
+/*#endregion content end */
 .cg {
   width: 100%;
   height: 1000px;
